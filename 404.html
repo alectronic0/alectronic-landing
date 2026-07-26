@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Alec Doran-Twyford</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background-color: #0d0914;
+      color: #f3eefc;
+      font-family: 'Outfit', sans-serif;
+    }
+    .card-404 {
+      width: min(480px, 92vw);
+      background: rgba(23, 15, 38, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    .gif-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      background: #140d21;
+    }
+    .gif-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .title-404 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .message-404 {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #a799c2;
+      margin-bottom: 1.75rem;
+    }
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+    }
+    .footer-404 {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #8b7ca3;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="card-404">
+    <div class="gif-wrap">
+      <img id="gif" src="" alt="404 illustration">
+    </div>
+    <h1 class="title-404" id="title"></h1>
+    <p class="message-404" id="message"></p>
+    <a href="/" class="btn-home">← Take Me Home</a>
+  </div>
+  <p class="footer-404">You've found a page that doesn't exist on Alectronic Hub.</p>
+
+  <script src="js/main.js"></script>
+  <script>
+    const combos = [
+      {
+        gif:     "https://date.alec.today/img/gifs/xUStFKHmuFPYk.gif",
+        title:   "404 — Nothing to See Here",
+        message: "Yeah… you weren't meant to see this. Please disperse."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/SRx5tBBrTQOBi.gif",
+        title:   "404 — Lost in Space",
+        message: "I have absolutely no idea how you got here. But honestly? Same."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/9PAIhJvcQ35hdZPUir.gif",
+        title:   "404 — It's a Trap!",
+        message: "Admiral Ackbar tried to warn you. This page doesn't exist."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/E87jjnSCANThe.gif",
+        title:   "404 — What Do You Want?!",
+        message: "I don't know what you're looking for, but it's not here. Dramatic, I know."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/eoFJSruUWf7qq1zNHD.gif",
+        title:   "404 — Unauthorised Access",
+        message: "Not sure Knuckles should have approved this… because this page doesn't exist."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/SmoCFhZCi1kzu.gif",
+        title:   "404 — I'll Allow It",
+        message: "Not sure how you got here, but I'll allow it. You should probably head back though."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/NTur7XlVDUdqM.gif",
+        title:   "404 — This Is Fine",
+        message: "Everything is fine. This page is just… not here. But it's fine. Totally fine."
+      },
+      {
+        gif:     "https://date.alec.today/img/gifs/maNB0qAiRVAty.gif",
+        title:   "404 — Fixing Bugs",
+        message: "Our best engineer is on it. Probably. She's definitely typing something."
+      }
+    ];
+
+    const pick = combos[Math.floor(Math.random() * combos.length)];
+    document.getElementById("gif").src     = pick.gif;
+    document.getElementById("gif").alt     = pick.title;
+    document.getElementById("title").textContent   = pick.title;
+    document.getElementById("message").textContent = pick.message;
+  </script>
+</body>
+</html>

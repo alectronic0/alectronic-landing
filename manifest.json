@@ -1,0 +1,16 @@
+{
+  "name": "Alec Doran-Twyford (Alectronic) | Digital Hub",
+  "short_name": "Alectronic",
+  "description": "Official homepage of Alec Doran-Twyford (Alectronic)",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0914",
+  "theme_color": "#0d0914",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
