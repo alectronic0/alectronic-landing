@@ -329,8 +329,12 @@ html, body {
 .chip-icon {
   width: 20px;
   height: 20px;
-  fill: currentColor;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.social-chip:hover .chip-icon {
+  transform: scale(1.15);
 }
 
 .social-chip:hover {
