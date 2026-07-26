@@ -338,6 +338,62 @@ html, body {
   gap: 20px;
 }
 
+.card-dashed {
+  border: 1.5px dashed rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+.card-dashed:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.placeholder-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+}
+
+.placeholder-icon-bg {
+  font-size: 2.5rem;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-dashed:hover .placeholder-icon-bg {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+.project-collab-note {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 12px;
+  padding: 12px 24px;
+  background: var(--surface-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+}
+
+.project-collab-note a {
+  color: var(--primary-accent);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.project-collab-note a:hover {
+  color: #ffffff;
+}
+
 @media (max-width: 900px) {
   .featured-grid,
   .projects-grid {
@@ -349,6 +405,10 @@ html, body {
   .featured-grid,
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-dashed {
+    display: none; /* Hide dashed placeholders on mobile screens */
   }
 }
 
