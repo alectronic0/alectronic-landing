@@ -326,6 +326,22 @@ html, body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Projects Section */
+.projects-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.projects-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
 /* Footer */
 .landing-footer {
   text-align: center;
