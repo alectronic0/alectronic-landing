@@ -141,7 +141,7 @@ html, body {
 .featured-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
 }
 
@@ -152,10 +152,10 @@ html, body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 20px;
-  padding: 28px 24px;
+  padding: 0 0 20px 0;
   display: flex;
-  align-items: center;
-  gap: 18px;
+  flex-direction: column;
+  align-items: flex-start;
   text-decoration: none;
   color: var(--text-main);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -183,15 +183,9 @@ html, body {
   background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.35), transparent 40%);
 }
 
-.hub-card {
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 0 24px 0;
-}
-
 .card-preview {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 135px;
   overflow: hidden;
   border-bottom: 1px solid var(--border-glass);
 }
@@ -205,24 +199,31 @@ html, body {
 }
 
 .hub-card:hover .card-preview img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .card-header-row {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 20px 24px 0 24px;
+  justify-content: space-between;
+  padding: 16px 20px 0 20px;
 }
 
-.card-header-row h2 {
-  font-size: 1.3rem;
+.header-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-title-wrapper h2 {
+  font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
 }
 
 .hub-card .card-content {
-  padding: 8px 24px 0 24px;
+  padding: 8px 20px 0 20px;
 }
 
 .hub-card:hover {
@@ -237,7 +238,7 @@ html, body {
 }
 
 .card-icon {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -246,22 +247,17 @@ html, body {
   flex: 1;
 }
 
-.card-content h2 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
 .card-content p {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.4;
 }
 
 .card-arrow {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--text-sub);
   transition: transform 0.2s ease, color 0.2s ease;
+  line-height: 1;
 }
 
 .hub-card:hover .card-arrow {
