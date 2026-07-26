@@ -271,7 +271,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .section-title {
@@ -280,6 +280,22 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-sub);
+}
+
+.social-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sub-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  margin-left: 4px;
 }
 
 .social-grid {
