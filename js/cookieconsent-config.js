@@ -1,7 +1,34 @@
 window.addEventListener('load', function() {
     if (typeof CookieConsent === 'undefined') return;
 
+    function handleConsentUpdate() {
+        const analyticsAccepted = CookieConsent.acceptedCategory('analytics');
+
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                'analytics_storage': analyticsAccepted ? 'granted' : 'denied'
+            });
+        }
+
+        if (!analyticsAccepted) {
+            const cookies = document.cookie.split(';');
+            const domain = window.location.hostname;
+            const parts = domain.split('.');
+            const rootDomain = parts.length > 1 ? parts.slice(-2).join('.') : domain;
+
+            cookies.forEach(function(c) {
+                const name = c.split('=')[0].trim();
+                if (name.startsWith('_ga') || name.startsWith('_gid') || name.startsWith('_gat')) {
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + domain + ';';
+                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + rootDomain + ';';
+                }
+            });
+        }
+    }
+
     CookieConsent.run({
+        autoClearCookies: true,
         guiOptions: {
             consentModal: {
                 layout: 'box',
@@ -20,7 +47,13 @@ window.addEventListener('load', function() {
             necessary: {
                 readOnly: true
             },
-            analytics: {}
+            analytics: {
+                autoClear: {
+                    cookies: [
+                        { name: /^(_ga|_gid|_gat|_ga_.*)/ }
+                    ]
+                }
+            }
         },
         language: {
             default: 'en',
@@ -37,7 +70,6 @@ window.addEventListener('load', function() {
                         title: "Manage Cookie Preferences",
                         acceptAllBtn: "Accept All",
                         acceptNecessaryBtn: "Reject Non-Essential",
-                        savePreferencesBtn: "Save Preferences",
                         closeIconLabel: "Close",
                         sections: [
                             {
@@ -59,19 +91,7 @@ window.addEventListener('load', function() {
                 }
             }
         },
-        onAccept: function() {
-            if (typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': CookieConsent.acceptedCategory('analytics') ? 'granted' : 'denied'
-                });
-            }
-        },
-        onChange: function() {
-            if (typeof gtag === 'function') {
-                gtag('consent', 'update', {
-                    'analytics_storage': CookieConsent.acceptedCategory('analytics') ? 'granted' : 'denied'
-                });
-            }
-        }
+        onAccept: handleConsentUpdate,
+        onChange: handleConsentUpdate
     });
 });
