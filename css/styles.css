@@ -442,3 +442,28 @@ html, body {
   color: var(--text-sub);
   margin-top: 20px;
 }
+
+/* ── Floating Cookie Button ── */
+.cookie-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9990;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #170f26;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #f3eefc;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cookie-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.3);
+}
