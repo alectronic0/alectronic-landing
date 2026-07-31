@@ -16,13 +16,13 @@
   bottom: 75px !important;
   left: 16px !important;
   right: auto !important;
-  max-width: 340px !important;
-  padding: 1.1rem !important;
+  max-width: 320px !important;
+  padding: 0.85rem !important;
 }
 
 #cc-main .pm-wrapper {
-  max-width: 580px !important;
-  padding: 1.5rem !important;
+  max-width: 560px !important;
+  padding: 1.1rem !important;
 }
 
 #cc-main h1,
