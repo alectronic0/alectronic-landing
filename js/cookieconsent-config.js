@@ -73,17 +73,17 @@ window.addEventListener('load', function() {
                         closeIconLabel: "Close",
                         sections: [
                             {
-                                title: "Cookie Usage",
-                                description: "We use cookies to ensure core site functions and measure site traffic anonymously."
+                                title: "Cookie Usage Overview",
+                                description: "We use cookies to ensure basic website functionality and analyze anonymous site traffic to improve user experience."
                             },
                             {
                                 title: "Strictly Necessary Cookies",
-                                description: "Required for basic site operation and security.",
+                                description: "Essential cookies required for website security, page navigation, and basic core operations. These cannot be disabled.",
                                 category: "necessary"
                             },
                             {
                                 title: "Performance & Analytics Cookies",
-                                description: "Helps us understand visitor metrics and improve user experience.",
+                                description: "Optional Google Analytics cookies that help us measure site traffic and visitor interactions anonymously.",
                                 category: "analytics"
                             }
                         ]
