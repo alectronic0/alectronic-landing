@@ -60,8 +60,8 @@ window.addEventListener('load', function() {
             translations: {
                 en: {
                     consentModal: {
-                        title: "Cookie & Privacy Settings 🍪",
-                        description: "This site uses cookies to ensure basic website functionality and gather anonymous analytics.",
+                        title: "Privacy & Cookies Notice 🍪",
+                        description: "We use cookies to enhance your browsing experience and analyze site traffic anonymously.",
                         acceptAllBtn: "Accept All",
                         acceptNecessaryBtn: "Reject Non-Essential",
                         showPreferencesBtn: "Manage Preferences"
