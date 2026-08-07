@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       main.appendChild(footer);
     }
     footer.innerHTML = `
-      <p>&copy; <span class="year">${new Date().getFullYear()}</span> Alec &middot; alec.today &middot; All rights reserved. &middot; <button type="button" class="cookie-pref-btn" data-cc="show-preferencesModal">Cookie Preferences 🍪</button></p>
-      <p class="powered-by-text">Powered by <a href="https://alec.today/" target="_blank" rel="noopener" class="powered-by-link">${content.footer.credit}</a></p>
+      <p>&copy; <span class="year">${new Date().getFullYear()}</span> Alec &middot; alec.today &middot; All rights reserved.</p>
+      <p class="powered-by-text"><a href="https://alec.today/" target="_blank" rel="noopener" class="powered-by-link">${content.footer.credit}</a></p>
       <p class="footer-sublink"><a href="${content.footer.wishlistUrl}" target="_blank" rel="noopener" class="wishlist-link">🎁 Wishlist (gift.alec.today)</a></p>
     `;
   }
