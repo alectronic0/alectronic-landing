@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
       footer = document.createElement('footer');
       footer.id = 'footer';
       footer.className = 'landing-footer';
-      const main = document.querySelector('main.landing-container') || document.body;
-      main.appendChild(footer);
+      const target = document.body;
+      target.appendChild(footer);
     }
     footer.innerHTML = `
       <p>&copy; <span class="year">${new Date().getFullYear()}</span> Alec &middot; alec.today &middot; All rights reserved.</p>
